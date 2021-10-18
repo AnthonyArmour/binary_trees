@@ -27,11 +27,11 @@ size_t recurse_count(const binary_tree_t *tree, size_t count)
 	size_t cnt_right = 0;
 
 	if (tree->left)
-		cnt_left += recurse_count(tree->left, count+1);
+		cnt_left = recurse_count(tree->left, count+1);
 	if (tree->right)
-		cnt_left += recurse_count(tree->right, count+1);
+		cnt_left = recurse_count(tree->right, count+1);
 	if (binary_tree_is_leaf(tree))
-		return (1);
+		return (count);
 	return (max(cnt_left, cnt_right));
 }
 
