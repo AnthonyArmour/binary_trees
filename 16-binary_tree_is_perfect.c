@@ -33,13 +33,13 @@ int perfection(const binary_tree_t *tree, int d, int level)
 		return (1);
 
 	if ((!tree->left) && (!tree->right))
-		return (d == level+1);
+		return (d == level + 1);
 
 	if ((!tree->left) || (!tree->right))
 		return (0);
 
-	return (perfection(tree->left, d, level+1) &&
-					   perfection(tree->right, d, level+1));
+	return (perfection(tree->left, d, level + 1) &&
+					   perfection(tree->right, d, level + 1));
 }
 
 
@@ -55,7 +55,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 
 	if (!tree)
 		return (0);
-		
+
 	d = get_depth(tree);
-	return perfection(tree, d, 0);
+	return (perfection(tree, d, 0));
 	}
