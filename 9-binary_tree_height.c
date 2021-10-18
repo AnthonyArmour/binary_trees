@@ -27,9 +27,9 @@ size_t recurse_count(const binary_tree_t *tree, size_t count)
 	size_t cnt_right = 0;
 
 	if (tree->left)
-		cnt_left = recurse_count(tree->left, count+1);
+		cnt_left = recurse_count(tree->left, count + 1);
 	if (tree->right)
-		cnt_left = recurse_count(tree->right, count+1);
+		cnt_right = recurse_count(tree->right, count + 1);
 	if (binary_tree_is_leaf(tree))
 		return (count);
 	return (max(cnt_left, cnt_right));
@@ -37,15 +37,14 @@ size_t recurse_count(const binary_tree_t *tree, size_t count)
 
 
 /**
- * binary_tree_postorder - postorder traversal
- * @tree: tree to traverse
- * @func: function to call for each node in tree
+ * binary_tree_height - gets height of binary tree
+ * @tree: tree to find height of
  * Return: void
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	if (binary_tree_is_leaf(tree) == 0)
+	if ((tree) && (binary_tree_is_leaf(tree) == 0))
 		return (recurse_count(tree, 0));
 	else
 		return (0);
