@@ -39,7 +39,7 @@ size_t recurse_count(const binary_tree_t *tree, size_t count)
 /**
  * binary_tree_height - gets height of binary tree
  * @tree: tree to find height of
- * Return: void
+ * Return: tree height
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
