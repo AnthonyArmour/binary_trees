@@ -64,11 +64,12 @@ size_t binary_tree_height(const binary_tree_t *tree)
  */
 size_t exp_growth(size_t height)
 {
-    size_t x, size = 1;
+    size_t x, exp = 1, size = 1;
 
     for (x = 0; x < height; x++)
     {
-        size += size + size;
+        exp *= 2;
+        size += exp;
     }
     return size;
 }
